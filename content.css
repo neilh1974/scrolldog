@@ -1,0 +1,120 @@
+#scroll-dog-widget {
+  position: fixed !important;
+  top: 50% !important;
+  left: 50% !important;
+  right: auto !important;
+  z-index: 2147483647 !important;
+  pointer-events: none !important;
+  line-height: 1 !important;
+  font-size: 0 !important;
+  transform: translate(-50%, -50%) !important;
+}
+
+#scroll-dog-widget .sdw-wrap {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  transform-origin: center center !important;
+  transition:
+    transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1),
+    opacity   0.4s ease !important;
+  will-change: transform, opacity;
+}
+
+#scroll-dog-widget .sdw-state-hidden  {
+  transform: scale(0) !important;
+  opacity: 0 !important;
+}
+#scroll-dog-widget .sdw-state-happy {
+  transform: scale(0.9) !important;
+  opacity: 1 !important;
+}
+#scroll-dog-widget .sdw-state-worried {
+  transform: scale(1) !important;
+  opacity: 1 !important;
+}
+#scroll-dog-widget .sdw-state-sad {
+  transform: scale(1.08) !important;
+  opacity: 1 !important;
+}
+#scroll-dog-widget .sdw-state-crying {
+  opacity: 1 !important;
+  animation: sdw-jiggle 0.45s ease-in-out infinite !important;
+}
+
+#scroll-dog-widget .sdw-dog {
+  display: block !important;
+  width: 136px !important;
+  height: 136px !important;
+  overflow: visible !important;
+  filter: drop-shadow(0 10px 18px rgba(0,0,0,0.22)) !important;
+  image-rendering: pixelated !important;
+  shape-rendering: crispEdges !important;
+}
+
+#scroll-dog-widget .sdw-brow-l,
+#scroll-dog-widget .sdw-brow-r,
+#scroll-dog-widget .sdw-mouth-sad,
+#scroll-dog-widget .sdw-tears {
+  display: none !important;
+}
+
+#scroll-dog-widget .sdw-state-worried .sdw-brow-l,
+#scroll-dog-widget .sdw-state-worried .sdw-brow-r {
+  display: inline !important;
+}
+
+#scroll-dog-widget .sdw-state-sad .sdw-brow-l,
+#scroll-dog-widget .sdw-state-sad .sdw-brow-r     { display: inline !important; }
+#scroll-dog-widget .sdw-state-sad .sdw-mouth-happy { display: none   !important; }
+#scroll-dog-widget .sdw-state-sad .sdw-mouth-sad   { display: inline !important; }
+#scroll-dog-widget .sdw-state-sad .sdw-tears       { display: inline !important; }
+#scroll-dog-widget .sdw-state-sad .sdw-tongue      { display: none   !important; }
+
+#scroll-dog-widget .sdw-state-crying .sdw-brow-l,
+#scroll-dog-widget .sdw-state-crying .sdw-brow-r   { display: inline !important; }
+#scroll-dog-widget .sdw-state-crying .sdw-mouth-happy { display: none   !important; }
+#scroll-dog-widget .sdw-state-crying .sdw-mouth-sad   { display: inline !important; }
+#scroll-dog-widget .sdw-state-crying .sdw-tears       { display: inline !important; }
+#scroll-dog-widget .sdw-state-crying .sdw-tongue      { display: none   !important; }
+
+#scroll-dog-widget .sdw-state-happy .sdw-tail {
+  transform-box: fill-box !important;
+  transform-origin: 0% 100% !important;
+  animation: sdw-wag 0.5s ease-in-out infinite alternate !important;
+}
+
+@keyframes sdw-wag {
+  from { transform: translate(0px, 0px); }
+  to   { transform: translate(4px, -4px);  }
+}
+
+#scroll-dog-widget .sdw-state-sad .sdw-tear-a { animation: sdw-drip 1.9s ease-in 0.0s  infinite !important; }
+#scroll-dog-widget .sdw-state-sad .sdw-tear-b { animation: sdw-drip 1.9s ease-in 0.35s infinite !important; }
+#scroll-dog-widget .sdw-state-sad .sdw-tear-c { animation: sdw-drip 1.9s ease-in 0.95s infinite !important; }
+#scroll-dog-widget .sdw-state-sad .sdw-tear-d { animation: sdw-drip 1.9s ease-in 1.30s infinite !important; }
+
+#scroll-dog-widget .sdw-state-crying .sdw-tear-a { animation: sdw-drip 0.85s ease-in 0.00s infinite !important; }
+#scroll-dog-widget .sdw-state-crying .sdw-tear-b { animation: sdw-drip 0.85s ease-in 0.12s infinite !important; }
+#scroll-dog-widget .sdw-state-crying .sdw-tear-c { animation: sdw-drip 0.85s ease-in 0.42s infinite !important; }
+#scroll-dog-widget .sdw-state-crying .sdw-tear-d { animation: sdw-drip 0.85s ease-in 0.57s infinite !important; }
+
+@keyframes sdw-drip {
+  0%   { transform: translateY(0px);  opacity: 0.95; }
+  70%  { opacity: 0.65; }
+  100% { transform: translateY(26px); opacity: 0; }
+}
+
+@keyframes sdw-jiggle {
+  0%   { transform: scale(1.16) translate( 0px,  0px); }
+  15%  { transform: scale(1.16) translate(-4px, -3px); }
+  30%  { transform: scale(1.16) translate( 5px, -6px); }
+  45%  { transform: scale(1.16) translate(-3px, -2px); }
+  62%  { transform: scale(1.16) translate( 4px, -5px); }
+  80%  { transform: scale(1.16) translate(-2px, -1px); }
+  100% { transform: scale(1.16) translate( 0px,  0px); }
+}
+
+#scroll-dog-widget .sdw-shadow {
+  fill: rgba(0, 0, 0, 0.14) !important;
+}

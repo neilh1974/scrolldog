@@ -15,6 +15,6 @@ xcrun safari-web-extension-converter \
   Build/WebExtension \
   --project-location Safari \
   --app-name "Scroll Dog" \
-  --bundle-identifier com.neilhe.scrolldog \
+  --bundle-identifier app.scrolldog.extension \
   --macos-only \
   --force

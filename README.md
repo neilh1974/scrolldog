@@ -1,58 +1,17 @@
 # Scroll Dog
 
-Scroll Dog is a browser extension for Chrome and Safari. It places a pixel dog on selected endless feed sites and stores local session scroll totals in browser storage.
+A pixel dog that lives at the bottom of your endless feeds. The more you scroll, the more worried he gets.
 
-## What this is
+Works on Reddit, YouTube, LinkedIn, Instagram, TikTok, Facebook, and X. Scroll totals are tracked per site in local browser storage and never leave your machine.
 
-This is the source for the Scroll Dog browser extension and the small download page. Chrome can load this folder directly. Safari conversion is prepared through the local helper script, but the final Safari app archive requires Xcode because Apple signs Safari extensions through an Xcode container app.
+## Install (Chrome)
 
-## Verify
+Open chrome://extensions, turn on developer mode, hit load unpacked, and pick this folder. Scroll a feed for a while and the dog shows up. Keep going and he cycles through worried, sad, and crying. The toolbar popup shows totals per site and has a reset button.
 
-Run:
+## Safari
 
-```sh
-node tools/validate_extension.mjs
-```
+Run tools/convert_safari.sh. It validates the source, stages a clean extension folder, and generates the Xcode project. Apple requires Safari extensions to ship inside a signed container app, so the final build needs Xcode installed. To check the extension source on its own, run node tools/validate_extension.mjs.
 
-Expected result:
+## Why
 
-```text
-ALL CHECKS PASSED
-```
-
-## Chrome Install
-
-1. Open Chrome extensions.
-2. Turn on developer mode.
-3. Choose load unpacked.
-4. Select this folder.
-5. Visit a supported feed site and scroll.
-
-## Safari Build
-
-Run:
-
-```sh
-tools/convert_safari.sh
-```
-
-The helper validates the source, stages a clean browser extension folder at `Build/WebExtension`, then asks Apple tooling to create the Safari app project.
-
-If the script says Xcode is required, install Xcode from the App Store, open it once, accept the license, make Xcode the active developer directory, then run the script again.
-
-## Manual QA
-
-1. Build and run the generated Scroll Dog app in Xcode.
-2. Open Safari settings and allow Scroll Dog.
-3. Visit Reddit, YouTube, LinkedIn, Instagram, TikTok, Facebook, or X.
-4. Scroll until the dog appears.
-5. Keep scrolling until the worried, sad, and crying states appear.
-6. Open the toolbar popup and confirm site totals update.
-7. Reset stats and confirm the empty state returns.
-
-## Store Submission
-
-1. Archive the app in Xcode.
-2. Validate the archive.
-3. Upload the archive to App Store Connect.
-4. Complete the privacy answers as local storage only.
+I wanted to see how much I actually scroll. The answer was upsetting, hence the dog.

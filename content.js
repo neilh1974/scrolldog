@@ -23,7 +23,7 @@
   root.id    = 'scroll-dog-widget';
   root.innerHTML = `
     <div class="sdw-wrap sdw-state-hidden" id="sdw-wrap" role="img" aria-label="Scroll Dog is hidden">
-      ${globalThis.ScrollDogArt}
+      ${getDogArt()}
     </div>
   `;
 
@@ -78,5 +78,20 @@
     if (typeof browser !== 'undefined' && browser.storage) return browser;
     if (typeof chrome !== 'undefined' && chrome.storage) return chrome;
     return null;
+  }
+
+  function getDogArt() {
+    if (typeof globalThis.ScrollDogArt === 'string' && globalThis.ScrollDogArt.includes('class="sdw-dog dogSvg"')) {
+      return globalThis.ScrollDogArt;
+    }
+
+    if (extensionApi && extensionApi.runtime && typeof extensionApi.runtime.getURL === 'function') {
+      console.warn('[Scroll Dog] Shared artwork was unavailable. Using the packaged icon.');
+      const iconUrl = extensionApi.runtime.getURL('icons/icon128.png');
+      return `<img class="sdw-dog dogSvg sdw-dog-fallback" src="${iconUrl}" alt="">`;
+    }
+
+    console.error('[Scroll Dog] Artwork could not be loaded.');
+    return '';
   }
 })();

@@ -49,7 +49,8 @@ expect(!popupSource.includes('🐶'), 'popup uses the Scroll Dog artwork instead
 expectNoNetworkApi('content.js', contentSource);
 expectNoNetworkApi('dog_art.js', dogArtSource);
 expectNoNetworkApi('popup.js', popupSource);
-await runContentCheck();
+await runContentCheck(true);
+await runContentCheck(false);
 await runPopupCheck('promise');
 await runPopupCheck('callback');
 
@@ -163,7 +164,7 @@ async function runPopupCheck(mode) {
   expect(!elements.stats.innerHTML.includes('<img'), `popup blocks ${mode} storage markup`);
 }
 
-async function runContentCheck() {
+async function runContentCheck(includeSharedArtwork) {
   const timers = [];
   const elements = {};
   const storageWrites = [];
@@ -185,6 +186,11 @@ async function runContentCheck() {
     },
     clearTimeout() {},
     chrome: {
+      runtime: {
+        getURL(path) {
+          return `chrome-extension://test/${path}`;
+        },
+      },
       storage: {
         local: {
           set(payload) {
@@ -217,11 +223,12 @@ async function runContentCheck() {
   };
 
   vm.createContext(sandbox);
-  vm.runInContext(dogArtSource, sandbox);
+  if (includeSharedArtwork) vm.runInContext(dogArtSource, sandbox);
   vm.runInContext(contentSource, sandbox);
 
+  const mode = includeSharedArtwork ? 'shared artwork' : 'fallback artwork';
   expect(Boolean(elements['scroll-dog-widget']), 'content script creates widget root');
-  expect(elements['scroll-dog-widget'].html.includes('class="sdw-dog dogSvg"'), 'content script uses shared rounded dog artwork');
+  expect(elements['scroll-dog-widget'].html.includes('class="sdw-dog dogSvg'), `content script uses ${mode}`);
   expect(typeof elements.scrollCallback === 'function', 'content script registers scroll listener');
 
   elements.scrollCallback({ target: sandbox.document });

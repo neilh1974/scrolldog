@@ -9,6 +9,7 @@ const warnings = [];
 runNodeTool('tools/validate_extension.mjs');
 runNodeTool('tools/stage_extension.mjs');
 expectFile('manifest.json');
+expectFile('dog_art.js');
 expectFile('popup.html');
 expectFile('popup.js');
 expectFile('content.js');
@@ -88,6 +89,7 @@ function expectNoLargeUnexpectedFiles() {
 function expectOnlyStagedFiles() {
   const expected = new Set([
     'manifest.json',
+    'dog_art.js',
     'content.js',
     'content.css',
     'popup.html',

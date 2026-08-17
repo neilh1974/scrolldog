@@ -39,11 +39,15 @@ if (manifest) {
 }
 
 const contentSource = readText('content.js');
+const dogArtSource = readText('dog_art.js');
 const popupSource = readText('popup.js');
 expect(contentSource.includes('getExtensionApi'), 'content script has extension API wrapper');
+expect(dogArtSource.includes('globalThis.ScrollDogArt'), 'shared dog artwork is defined');
 expect(popupSource.includes('usesPromises'), 'popup supports promise storage APIs');
 expect(popupSource.includes('escapeHtml'), 'popup escapes rendered host names');
+expect(!popupSource.includes('🐶'), 'popup uses the Scroll Dog artwork instead of a dog emoji');
 expectNoNetworkApi('content.js', contentSource);
+expectNoNetworkApi('dog_art.js', dogArtSource);
 expectNoNetworkApi('popup.js', popupSource);
 await runContentCheck();
 await runPopupCheck('promise');
@@ -164,7 +168,12 @@ async function runContentCheck() {
   const elements = {};
   const storageWrites = [];
   const documentNode = { name: 'document' };
-  const wrap = { className: '' };
+  const wrap = {
+    className: '',
+    setAttribute(name, value) {
+      this[name] = value;
+    },
+  };
 
   const sandbox = {
     console,
@@ -208,9 +217,11 @@ async function runContentCheck() {
   };
 
   vm.createContext(sandbox);
+  vm.runInContext(dogArtSource, sandbox);
   vm.runInContext(contentSource, sandbox);
 
   expect(Boolean(elements['scroll-dog-widget']), 'content script creates widget root');
+  expect(elements['scroll-dog-widget'].html.includes('class="sdw-dog dogSvg"'), 'content script uses shared rounded dog artwork');
   expect(typeof elements.scrollCallback === 'function', 'content script registers scroll listener');
 
   elements.scrollCallback({ target: sandbox.document });

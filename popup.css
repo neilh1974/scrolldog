@@ -20,7 +20,11 @@ body {
   border-bottom: 1px solid #eee;
 }
 
-.header-dog { font-size: 30px; line-height: 1; }
+.header-dog {
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+}
 
 .title {
   font-size: 15px;
@@ -71,14 +75,34 @@ body {
 .scroll-val.sad  { color: #ef6c00; }
 .scroll-val.cry  { color: #e53935; }
 
-.mood { font-size: 15px; }
+.mood {
+  min-width: 42px;
+  padding: 3px 5px;
+  border-radius: 999px;
+  background: #f8f4ed;
+  color: #67584d;
+  font-size: 8px;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.mood.warn { background: #fff4d9; color: #90620a; }
+.mood.sad { background: #ffead9; color: #9d4c13; }
+.mood.cry { background: #ffe2df; color: #a7362c; }
 
 .empty {
   text-align: center;
   padding: 14px 8px 6px;
   color: #666;
 }
-.empty-icon { font-size: 28px; margin-bottom: 8px; }
+.empty-icon {
+  width: 54px;
+  height: 54px;
+  margin-bottom: 8px;
+  border-radius: 12px;
+}
 .empty-msg  { font-size: 13px; font-weight: 600; margin-bottom: 4px; }
 .empty-sub  { font-size: 11px; color: #aaa; line-height: 1.6; }
 

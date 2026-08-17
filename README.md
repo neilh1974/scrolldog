@@ -1,6 +1,6 @@
 # Scroll Dog
 
-A pixel dog that lives at the bottom of your endless feeds. The more you scroll, the more worried he gets.
+A small dog that lives at the bottom of your endless feeds. The more you scroll, the more worried he gets.
 
 Works on Reddit, YouTube, LinkedIn, Instagram, TikTok, Facebook, and X. Scroll totals are tracked per site in local browser storage and never leave your machine.
 

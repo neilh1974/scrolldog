@@ -5,6 +5,7 @@ const root = new URL('..', import.meta.url).pathname;
 const out = join(root, 'Build', 'WebExtension');
 const files = [
   'manifest.json',
+  'dog_art.js',
   'content.js',
   'content.css',
   'popup.html',

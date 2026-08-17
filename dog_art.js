@@ -1,0 +1,39 @@
+globalThis.ScrollDogArt = `
+  <svg class="sdw-dog dogSvg" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <ellipse class="sdw-shadow" cx="512" cy="920" rx="245" ry="30"/>
+    <g stroke="#211a16" stroke-width="34" stroke-linecap="round" stroke-linejoin="round">
+      <path class="sdw-tail" d="M718 668c90-42 153-2 142 80-9 68-67 105-142 91" fill="#d98c59"/>
+      <path d="M304 559c48-67 125-102 208-102s160 35 208 102c48 68 57 190 29 284H275c-28-94-19-216 29-284z" fill="#de9764"/>
+      <path d="M387 565h250c6 0 11 5 11 11v15c0 11-9 20-20 20H396c-11 0-20-9-20-20v-15c0-6 5-11 11-11z" fill="#75beb2"/>
+      <circle cx="512" cy="610" r="31" fill="#75beb2"/>
+      <path d="M357 632c44-47 99-71 155-71s111 24 155 71c23 25 32 69 22 108-9 36-31 72-60 103H395c-29-31-51-67-60-103-10-39-1-83 22-108z" fill="#fff0de" stroke="none"/>
+      <path d="M268 248c-77 28-111 112-87 215 10 45 41 74 78 63 42-12 64-74 73-172 5-60-18-123-64-106z" fill="#d98c59"/>
+      <path d="M756 248c77 28 111 112 87 215-10 45-41 74-78 63-42-12-64-74-73-172-5-60 18-123 64-106z" fill="#d98c59"/>
+      <rect x="245" y="146" width="534" height="457" rx="176" fill="#de9764"/>
+      <path d="M350 165c43-24 96-36 162-36 65 0 119 12 162 36" fill="none" stroke="#edb27f" stroke-width="20"/>
+      <rect x="356" y="319" width="55" height="82" rx="28" fill="#211a16" stroke="none"/>
+      <rect x="613" y="319" width="55" height="82" rx="28" fill="#211a16" stroke="none"/>
+      <circle cx="375" cy="340" r="9" fill="#fffaf1" stroke="none"/>
+      <circle cx="632" cy="340" r="9" fill="#fffaf1" stroke="none"/>
+      <path class="sdw-brow-l" d="M344 286c19-18 43-22 66-10" fill="none" stroke-width="18"/>
+      <path class="sdw-brow-r" d="M614 276c23-12 47-8 66 10" fill="none" stroke-width="18"/>
+      <rect x="381" y="379" width="262" height="154" rx="77" fill="#fff0de" stroke="none"/>
+      <path d="M477 420c12-11 58-11 70 0 10 10 3 37-35 48-38-11-45-38-35-48z" fill="#211a16" stroke="none"/>
+      <path class="sdw-tongue" d="M490 493h44v9c0 31-44 31-44 0z" fill="#ef8790" stroke="none"/>
+      <path class="sdw-mouth-happy" d="M512 464v22m0 0c-18 26-50 22-60 2m60-2c18 26 50 22 60 2" fill="none" stroke-width="18"/>
+      <path class="sdw-mouth-sad" d="M456 510c15-21 34-31 56-31s41 10 56 31" fill="none" stroke-width="18"/>
+      <circle cx="326" cy="434" r="13" fill="#efad99" stroke="none"/>
+      <circle cx="698" cy="434" r="13" fill="#efad99" stroke="none"/>
+      <path d="M293 742c-33 20-45 70-26 108 18 36 69 45 121 15 29-17 42-56 29-91-17-45-78-60-124-32z" fill="#de9764"/>
+      <path d="M731 742c33 20 45 70 26 108-18 36-69 45-121 15-29-17-42-56-29-91 17-45 78-60 124-32z" fill="#de9764"/>
+      <path d="M310 849c25-25 72-25 97 0 18 18 12 48-16 54h-65c-28-6-34-36-16-54z" fill="#fff0de"/>
+      <path d="M617 849c25-25 72-25 97 0 18 18 12 48-16 54h-65c-28-6-34-36-16-54z" fill="#fff0de"/>
+    </g>
+    <g class="sdw-tears" fill="#79cfee">
+      <path class="sdw-tear-a" d="M369 391c0 0-20 29-20 44a20 20 0 0 0 40 0c0-15-20-44-20-44z"/>
+      <path class="sdw-tear-b" d="M655 391c0 0-20 29-20 44a20 20 0 0 0 40 0c0-15-20-44-20-44z"/>
+      <path class="sdw-tear-c" d="M357 464c0 0-14 21-14 32a14 14 0 0 0 28 0c0-11-14-32-14-32z"/>
+      <path class="sdw-tear-d" d="M667 464c0 0-14 21-14 32a14 14 0 0 0 28 0c0-11-14-32-14-32z"/>
+    </g>
+  </svg>
+`;

@@ -18,6 +18,7 @@
     <circle cx="632" cy="340" r="9" fill="#fffaf1" stroke="none"/>
     <rect x="381" y="379" width="262" height="154" rx="77" fill="#fff0de" stroke="none"/>
     <path d="M477 420c12-11 58-11 70 0 10 10 3 37-35 48-38-11-45-38-35-48z" fill="#211a16" stroke="none"/>
+    <path d="M490 493h44v9c0 31-44 31-44 0z" fill="#ef8790" stroke="none"/>
     <path d="M512 464v22m0 0c-18 26-50 22-60 2m60-2c18 26 50 22 60 2" fill="none" stroke-width="18"/>
     <circle cx="326" cy="434" r="13" fill="#efad99" stroke="none"/>
     <circle cx="698" cy="434" r="13" fill="#efad99" stroke="none"/>

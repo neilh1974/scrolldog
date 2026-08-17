@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Scrolldog is a browser extension that turns endless scrolling into a visible habit cue.">
   <title>Scrolldog</title>
+  <link rel="icon" href="icons/icon32.png" sizes="32x32">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -30,7 +31,7 @@
         <div class="heroCopy">
           <p class="eyebrow">A tiny browser companion for endless feeds</p>
           <h1 id="heroTitle">Scrolldog makes your scrolling visible.</h1>
-          <p class="lede">A tiny pixel dog shows up as you keep scrolling. The longer the session goes, the more dramatic it gets.</p>
+          <p class="lede">A tiny dog shows up as you keep scrolling. The longer the session goes, the more dramatic it gets.</p>
           <div class="heroActions">
             <a class="primaryBtn" href="scrolldog.zip" download>Download Chrome files</a>
             <a class="secondaryBtn" href="#demo">Watch demo</a>
@@ -75,70 +76,7 @@
               </div>
               <button class="demoBtn" id="scrollBtn" type="button">Scroll more</button>
             </div>
-            <div class="dogWidget" id="dogWidget" aria-live="polite">
-              <svg class="dogSvg" viewBox="0 0 112 112" role="img" aria-label="Scrolldog mascot">
-                <rect class="sdw-shadow" x="26" y="96" width="60" height="5"></rect>
-
-                <g class="sdw-head">
-                  <rect x="24" y="12" width="12" height="12" fill="#111111"></rect>
-                  <rect x="20" y="24" width="12" height="28" fill="#111111"></rect>
-                  <rect x="32" y="20" width="8" height="28" fill="#111111"></rect>
-                  <rect x="28" y="24" width="8" height="24" fill="#FFFFFF"></rect>
-                  <rect x="32" y="28" width="4" height="12" fill="#DDE6EE"></rect>
-
-                  <rect x="76" y="20" width="8" height="28" fill="#111111"></rect>
-                  <rect x="84" y="24" width="12" height="28" fill="#111111"></rect>
-                  <rect x="76" y="12" width="12" height="12" fill="#111111"></rect>
-                  <rect x="80" y="24" width="8" height="24" fill="#FFFFFF"></rect>
-                  <rect x="80" y="28" width="4" height="12" fill="#DDE6EE"></rect>
-
-                  <rect x="28" y="28" width="56" height="12" fill="#111111"></rect>
-                  <rect x="20" y="40" width="72" height="12" fill="#111111"></rect>
-                  <rect x="16" y="52" width="80" height="28" fill="#111111"></rect>
-                  <rect x="24" y="80" width="64" height="12" fill="#111111"></rect>
-                  <rect x="36" y="92" width="40" height="8" fill="#111111"></rect>
-
-                  <rect x="24" y="48" width="64" height="32" fill="#FFFFFF"></rect>
-                  <rect x="32" y="80" width="48" height="12" fill="#FFFFFF"></rect>
-                  <rect x="20" y="56" width="12" height="16" fill="#FFFFFF"></rect>
-                  <rect x="80" y="56" width="12" height="16" fill="#FFFFFF"></rect>
-
-                  <rect x="28" y="36" width="56" height="16" fill="#111111"></rect>
-                  <rect x="24" y="48" width="24" height="18" fill="#111111"></rect>
-                  <rect x="64" y="48" width="24" height="18" fill="#111111"></rect>
-                  <rect x="48" y="40" width="16" height="30" fill="#FFFFFF"></rect>
-                  <rect x="40" y="52" width="12" height="18" fill="#FFFFFF"></rect>
-                  <rect x="60" y="52" width="12" height="18" fill="#FFFFFF"></rect>
-
-                  <rect x="36" y="54" width="8" height="8" fill="#86D8FF"></rect>
-                  <rect x="68" y="54" width="8" height="8" fill="#86D8FF"></rect>
-                  <rect x="40" y="56" width="4" height="4" fill="#111111"></rect>
-                  <rect x="68" y="56" width="4" height="4" fill="#111111"></rect>
-                  <rect x="36" y="52" width="4" height="3" fill="#FFFFFF"></rect>
-                  <rect x="72" y="52" width="4" height="3" fill="#FFFFFF"></rect>
-
-                  <rect class="sdw-brow-l" x="32" y="48" width="16" height="4" fill="#111111"></rect>
-                  <rect class="sdw-brow-r" x="64" y="48" width="16" height="4" fill="#111111"></rect>
-
-                  <rect x="48" y="68" width="16" height="8" fill="#111111"></rect>
-                  <rect x="52" y="68" width="4" height="3" fill="#555555"></rect>
-                  <rect x="54" y="76" width="4" height="12" fill="#111111"></rect>
-                  <rect class="sdw-mouth-happy" x="42" y="84" width="12" height="4" fill="#111111"></rect>
-                  <rect class="sdw-mouth-happy" x="58" y="84" width="12" height="4" fill="#111111"></rect>
-                  <rect class="sdw-tongue" x="54" y="88" width="8" height="10" fill="#F27A8A"></rect>
-                  <rect class="sdw-mouth-sad" x="42" y="88" width="12" height="4" fill="#111111"></rect>
-                  <rect class="sdw-mouth-sad" x="58" y="88" width="12" height="4" fill="#111111"></rect>
-                  <rect class="sdw-mouth-sad" x="50" y="84" width="12" height="4" fill="#111111"></rect>
-                </g>
-
-                <g class="sdw-tears">
-                  <rect class="sdw-tear-a" x="34" y="62" width="6" height="12" fill="#8BD7FF"></rect>
-                  <rect class="sdw-tear-b" x="72" y="62" width="6" height="12" fill="#8BD7FF"></rect>
-                  <rect class="sdw-tear-c" x="32" y="78" width="5" height="9" fill="#8BD7FF"></rect>
-                  <rect class="sdw-tear-d" x="76" y="78" width="5" height="9" fill="#8BD7FF"></rect>
-                </g>
-              </svg>
-            </div>
+            <div class="dogWidget" id="dogWidget" role="img" aria-label="Scroll Dog is happy"></div>
           </div>
         </div>
       </div>
@@ -172,7 +110,7 @@
       <div>
         <p class="eyebrow">Chrome extension</p>
         <h2 id="installTitle">Download the actual extension files.</h2>
-        <p>The download contains the current manifest, content script, popup, styles, and pixel art icons used by Scrolldog.</p>
+        <p>The download contains the current manifest, content script, popup, styles, and rounded dog icons used by Scrolldog.</p>
         <a class="inlineDownload" href="scrolldog.zip" download>Download Scrolldog files</a>
       </div>
       <ol class="steps">
@@ -183,6 +121,7 @@
     </section>
   </main>
 
+  <script src="dog_art.js"></script>
   <script src="site.js"></script>
 </body>
 </html>

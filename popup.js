@@ -18,7 +18,7 @@ async function loadStats() {
   if (entries.length === 0) {
     statsEl.innerHTML = `
       <div class="empty">
-        <div class="empty-icon">🐾</div>
+        <img class="empty-icon" src="icons/icon128.png" alt="">
         <div class="empty-msg">No scrolling tracked yet.</div>
         <div class="empty-sub">
           Visit LinkedIn, Instagram, Twitter,<br>
@@ -31,11 +31,12 @@ async function loadStats() {
 
   statsEl.innerHTML = entries.map(e => {
     const host = escapeHtml(e.host);
+    const mood = moodLabel(e.scroll);
     return `
     <div class="row">
       <span class="host" title="${host}">${host}</span>
       <span class="scroll-val ${colorClass(e.scroll)}">${fmt(e.scroll)}</span>
-      <span class="mood">${moodEmoji(e.scroll)}</span>
+      <span class="mood ${colorClass(e.scroll)}" aria-label="Dog mood: ${mood}">${mood}</span>
     </div>
   `;
   }).join('');
@@ -61,12 +62,12 @@ function colorClass(px) {
   return 'cry';
 }
 
-function moodEmoji(px) {
-  if (px < 3000)  return '😊';
-  if (px < 8000)  return '🐶';
-  if (px < 15000) return '😟';
-  if (px < 25000) return '😢';
-  return '😭';
+function moodLabel(px) {
+  if (px < 3000)  return 'calm';
+  if (px < 8000)  return 'happy';
+  if (px < 15000) return 'worried';
+  if (px < 25000) return 'sad';
+  return 'crying';
 }
 
 function getExtensionApi() {

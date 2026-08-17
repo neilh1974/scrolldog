@@ -312,8 +312,6 @@ h1 {
   height: 150px;
   overflow: visible;
   filter: drop-shadow(0 12px 18px rgba(57, 35, 16, 0.22));
-  image-rendering: pixelated;
-  shape-rendering: crispEdges;
 }
 
 .sdw-shadow {
@@ -329,6 +327,12 @@ h1 {
 
 .dogWidget.worried {
   transform: translate(-50%, -50%) scale(1);
+}
+
+.dogWidget.happy .sdw-tail {
+  transform-box: fill-box;
+  transform-origin: 0% 100%;
+  animation: wag 500ms ease-in-out infinite alternate;
 }
 
 .dogWidget.sad {
@@ -537,6 +541,15 @@ h3 {
   }
   70% {
     translate: -4px 2px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dogWidget,
+  .dogWidget .sdw-tail,
+  .dogWidget .sdw-tears > * {
+    animation: none;
+    transition: none;
   }
 }
 
